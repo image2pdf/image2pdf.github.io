@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://image2pdf.github.io/sitemap.xml

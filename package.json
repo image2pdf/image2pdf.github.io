@@ -1,0 +1,29 @@
+{
+  "name": "image2pdf.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Convert Images to PDF Online | Free, Fast & 100% Private Client-Side Converter",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^4.16.18",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5"
+  }
+}

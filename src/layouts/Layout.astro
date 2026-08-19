@@ -1,0 +1,187 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Convert Images to PDF Online | Free, Fast & 100% Private",
+  description = "Convert JPG, PNG, WebP, SVG, and AVIF images to a single high-quality PDF document directly in your browser. 100% private client-side processing with zero file uploads.",
+  canonicalUrl = "https://image2pdf.github.io/",
+  ogImage = "https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#DC2626" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Primary SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="image to pdf, convert jpg to pdf, convert png to pdf, webp to pdf, svg to pdf, client-side pdf converter, private image to pdf, free online pdf tool, offline image converter, no upload pdf maker" />
+    <meta name="author" content="Image2PDF" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Image2PDF" />
+    <meta property="og:title" content="Free In-Browser Image to PDF Converter | 100% Private" />
+    <meta property="og:description" content="Combine photos, document scans, and receipts into a single clean PDF document securely in your browser without uploading files to any server." />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Image2PDF - Free Online Image to PDF Converter" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Image2PDF - Free Online Image to PDF Converter" />
+
+    <!-- Resource Hints / Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q2ZBNNZTS"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3Q2ZBNNZTS');
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans antialiased selection:bg-red-100 selection:text-red-900 overflow-x-hidden">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+      <div class="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+        <!-- Brand Logo -->
+        <a href="/" class="flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-lg p-1 min-w-0" aria-label="Image2PDF Home">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-red-600 flex items-center justify-center shadow-md shadow-red-600/20 group-hover:bg-red-700 transition-colors flex-shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-extrabold text-base sm:text-lg leading-tight tracking-tight text-slate-900 truncate">
+              Image<span class="text-red-600">2</span>PDF
+            </span>
+            <span class="text-[11px] sm:text-xs text-slate-500 font-medium hidden xs:inline-block truncate">Client-Side PDF Studio</span>
+          </div>
+        </a>
+
+        <!-- Header Actions: Support the Developer -->
+        <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <a
+            href="https://buymeacoffee.com/kisharadilz"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/90 text-xs sm:text-sm font-semibold shadow-xs transition-all active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            aria-label="Support the Developer on Buy Me a Coffee"
+          >
+            <!-- Coffee Icon SVG -->
+            <svg class="w-4 h-4 text-amber-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM2 20h20v2H2v-2z" />
+            </svg>
+            <span class="hidden md:inline">Support the Developer</span>
+            <span class="hidden xs:inline md:hidden">Support</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 w-full">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-16 sm:mt-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-100">
+          <!-- Column 1: Brand & Privacy Pledge -->
+          <div class="space-y-3 sm:col-span-2 lg:col-span-1">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold text-xs">
+                PDF
+              </div>
+              <span class="font-bold text-slate-900 tracking-tight">Image2PDF.github.io</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Fast, high-fidelity image to PDF compiler engineered to execute 100% locally in your web browser. Zero server uploads, zero logs, complete privacy.
+            </p>
+          </div>
+
+          <!-- Column 2: Supported Formats & Capabilities -->
+          <div class="space-y-2">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-900">Supported Formats</h3>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">JPEG / JPG</span>
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">PNG</span>
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">WebP</span>
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">SVG</span>
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">AVIF / BMP</span>
+            </div>
+            <p class="text-xs text-slate-500 pt-2">
+              Built with Astro, React Islands, Tailwind CSS, and pdf-lib.
+            </p>
+          </div>
+
+          <!-- Column 3: Trust & Privacy Assurance -->
+          <div class="space-y-2">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-900">Privacy Guarantee</h3>
+            <div class="p-3 bg-emerald-50/70 border border-emerald-200/80 rounded-xl text-xs text-emerald-900 flex items-start gap-2">
+              <svg class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span>Files never leave your local device. Conversions run directly in browser RAM with zero server communication.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright & Links -->
+        <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center sm:text-left">
+          <p>© {new Date().getFullYear()} Image2PDF. Open Source under MIT License.</p>
+          <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <a href="https://buymeacoffee.com/kisharadilz" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors font-medium flex items-center gap-1">
+              <span>☕ Buy Me a Coffee</span>
+            </a>
+            <span class="hidden xs:inline">•</span>
+            <span class="text-emerald-600 font-medium">100% Client-Side Free Utility</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

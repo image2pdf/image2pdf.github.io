@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Rounded Background Container -->
+  <rect width="48" height="48" rx="12" fill="#DC2626" />
+  
+  <!-- Back Page / Document Silhouette -->
+  <rect x="14" y="8" width="22" height="28" rx="3" fill="#FCA5A5" opacity="0.6" />
+  
+  <!-- Main Foreground Document -->
+  <rect x="10" y="12" width="22" height="28" rx="3" fill="#FFFFFF" />
+  
+  <!-- Image Graphic Placeholder inside Page -->
+  <circle cx="16" cy="19" r="2.5" fill="#F59E0B" />
+  <path d="M12 29L17 23L22 29L27 24L30 28V38C30 38.5523 29.5523 39 29 39H13C12.4477 39 12 38.5523 12 38V29Z" fill="#FEE2E2" />
+  
+  <!-- PDF Badge Pill in lower right -->
+  <rect x="22" y="27" width="18" height="11" rx="3" fill="#991B1B" />
+  <text x="24" y="35.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="6.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">PDF</text>
+</svg>

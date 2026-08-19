@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageToPdf from '../components/ImageToPdf.jsx';
+
+const ogImageUrl = "https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://image2pdf.github.io/#webapp",
+      "name": "Image2PDF Local Converter",
+      "url": "https://image2pdf.github.io/",
+      "image": ogImageUrl,
+      "screenshot": ogImageUrl,
+      "applicationCategory": "UtilitiesApplication, BusinessApplication, MultimediaApplication",
+      "operatingSystem": "Any (Modern Web Browser: Chrome, Safari, Firefox, Edge)",
+      "browserRequirements": "Requires JavaScript and HTML5 Canvas support. No plugins required.",
+      "softwareVersion": "1.0.0",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "description": "Convert JPG, PNG, WebP, SVG, and AVIF images to a single high-quality PDF document directly in your browser. 100% private client-side processing with zero file uploads.",
+      "featureList": [
+        "100% Client-Side Privacy: Processing happens exclusively in browser RAM",
+        "Zero Cloud Uploads: Files never leave your local device",
+        "Standard Page Formats: A4 (210×297 mm), US Letter (8.5×11 in), and Fit to Image Size",
+        "Auto Orientation Detection: Smart orientation per image aspect ratio",
+        "Configurable Page Margins: None (0mm), Small (5mm), and Standard (10mm)",
+        "Image Page Sequence Reordering via Drag & Drop or Reorder Buttons",
+        "90-Degree Clockwise Image Rotation per Page Card",
+        "Lossless High-Resolution PDF Compilation using pdf-lib",
+        "No Watermarks, No Sign-up, No File Size or Page Limits"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Image2PDF",
+        "url": "https://image2pdf.github.io/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://image2pdf.github.io/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://image2pdf.github.io/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://image2pdf.github.io/#howto",
+      "name": "How to Convert Images to PDF Privately in Your Browser",
+      "description": "Four simple steps to merge JPG, PNG, WebP, and SVG images into a single professional PDF document locally without uploading files.",
+      "image": ogImageUrl,
+      "totalTime": "PT10S",
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Image files (JPG, PNG, WebP, SVG, AVIF, BMP)"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Image2PDF Web Utility"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Select & Upload Images",
+          "text": "Drag and drop your JPG, PNG, WebP, or SVG images into the upload box or select files from your computer or mobile gallery.",
+          "url": "https://image2pdf.github.io/#converter-app"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Arrange, Reorder & Rotate",
+          "text": "Drag thumbnail cards or click arrow buttons to arrange your desired page sequence. Rotate sideways scans 90 degrees clockwise with one click.",
+          "url": "https://image2pdf.github.io/#converter-app"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Configure Layout & Margins",
+          "text": "Select your target page size (A4, US Letter, or Fit to Image), page orientation (Auto, Portrait, or Landscape), and margin widths.",
+          "url": "https://image2pdf.github.io/#converter-app"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Compile & Download PDF",
+          "text": "Click 'Convert & Download PDF'. Your PDF is compiled instantly in device RAM and downloaded to your device with zero watermarks.",
+          "url": "https://image2pdf.github.io/#converter-app"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://image2pdf.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it truly safe for sensitive documents like IDs and passports?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. All processing runs locally inside your browser's JavaScript engine. Your photos and documents never leave your computer or phone. You can even disconnect your internet after loading the page and the conversion will continue to work completely offline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats can I convert to PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our tool supports JPG, JPEG, PNG, WebP, SVG, AVIF, BMP, and GIF formats. Vector and unsupported formats are automatically rasterized at full natural resolution via HTML5 Canvas before embedding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there file size or image count limits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are no artificial limits. You can convert dozens of images into a single document as long as your device has sufficient browser RAM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool add watermarks or branding to my PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. The generated PDF documents are 100% clean, professional, and contain zero watermarks, headers, footers, or third-party branding."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title="Convert Images to PDF Online | Free, Fast & 100% Private"
+  description="Convert JPG, PNG, WebP, SVG, and AVIF images to a single high-quality PDF document directly in your browser. 100% private client-side processing with zero file uploads."
+  canonicalUrl="https://image2pdf.github.io/"
+  ogImage={ogImageUrl}
+>
+  <!-- JSON-LD Structured Data Schema Graph -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
+
+  <div class="max-w-5xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-12 sm:space-y-16">
+    <!-- Above-The-Fold Hero & Converter Section -->
+    <div class="space-y-5 sm:space-y-6">
+      <!-- Clean Hero Title -->
+      <section class="text-center space-y-2.5 sm:space-y-3 max-w-3xl mx-auto pt-1 sm:pt-2">
+        <h1 class="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.18] sm:leading-[1.15]">
+          Convert Images to PDF <br class="hidden xs:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-red-700">
+            Fast, Free & 100% Private
+          </span>
+        </h1>
+
+        <p class="text-xs xs:text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto px-2">
+          Merge JPG, PNG, WebP, and SVG files into a single high-quality PDF directly in your browser. Zero server uploads, no file limits.
+        </p>
+      </section>
+
+      <!-- Main Interactive Converter App -->
+      <section id="converter-app" class="scroll-mt-20" aria-label="Image to PDF Converter Studio">
+        <ImageToPdf client:load />
+      </section>
+    </div>
+
+    <!-- Informational Content (Below the fold - accessible by scrolling) -->
+    <div class="pt-6 sm:pt-8 border-t border-slate-200/80 space-y-12 sm:space-y-16">
+      <!-- How It Works Section -->
+      <section class="space-y-6 sm:space-y-8" aria-labelledby="how-it-works-heading">
+        <div class="text-center space-y-1.5 sm:space-y-2">
+          <h2 id="how-it-works-heading" class="text-xl xs:text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            How to Convert Images to PDF Privately
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Four effortless steps to generate clean, professional PDF documents.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+          <!-- Step 1 -->
+          <article class="bg-white p-4.5 xs:p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-hover-card transition-all duration-200 flex flex-col space-y-2.5 sm:space-y-3 relative group">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-red-50 text-red-600 font-extrabold text-sm sm:text-base flex items-center justify-center border border-red-100 group-hover:bg-red-600 group-hover:text-white transition-colors flex-shrink-0">
+              01
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Select Images</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Drag and drop your JPG, PNG, WebP, or SVG files into the upload zone or choose files from your device.
+            </p>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="bg-white p-4.5 xs:p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-hover-card transition-all duration-200 flex flex-col space-y-2.5 sm:space-y-3 relative group">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-red-50 text-red-600 font-extrabold text-sm sm:text-base flex items-center justify-center border border-red-100 group-hover:bg-red-600 group-hover:text-white transition-colors flex-shrink-0">
+              02
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Reorder & Rotate</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Arrange page sequence by dragging cards or clicking arrows. Rotate sideways scans with one click.
+            </p>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="bg-white p-4.5 xs:p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-hover-card transition-all duration-200 flex flex-col space-y-2.5 sm:space-y-3 relative group">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-red-50 text-red-600 font-extrabold text-sm sm:text-base flex items-center justify-center border border-red-100 group-hover:bg-red-600 group-hover:text-white transition-colors flex-shrink-0">
+              03
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Configure Layout</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Select A4, US Letter, or Fit-to-Image dimensions. Adjust portrait/landscape and margin preferences.
+            </p>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="bg-white p-4.5 xs:p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-subtle hover:shadow-hover-card transition-all duration-200 flex flex-col space-y-2.5 sm:space-y-3 relative group">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-red-50 text-red-600 font-extrabold text-sm sm:text-base flex items-center justify-center border border-red-100 group-hover:bg-red-600 group-hover:text-white transition-colors flex-shrink-0">
+              04
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Instant Download</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Click 'Convert & Download PDF'. Your PDF compiles locally in milliseconds without watermarks.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Why Choose Our Converter (Features) -->
+      <section class="bg-gradient-to-b from-slate-100/70 to-slate-50 border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-10 space-y-8 sm:space-y-10" aria-labelledby="why-choose-heading">
+        <div class="text-center space-y-1.5 sm:space-y-2 max-w-2xl mx-auto">
+          <h2 id="why-choose-heading" class="text-xl xs:text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Why Choose Our Image to PDF Converter?
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600">
+            Engineered for privacy-first speed, security, and document fidelity.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <!-- Feature 1 -->
+          <article class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-2.5 sm:space-y-3">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">100% In-Browser Security</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Files never leave your machine. Ideal for confidential government IDs, medical scans, bank receipts, and sensitive documents.
+            </p>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-2.5 sm:space-y-3">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">Blazing Fast Performance</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              No upload queues or internet bandwidth limits. Compiles multi-page PDFs in device RAM instantly using WebAssembly and Canvas.
+            </p>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-2.5 sm:space-y-3">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">Zero Watermarks & Limits</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Generate clean, professional documents with no branding or logos. Convert unlimited images with high-resolution retention.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Common Use Cases Section -->
+      <section class="space-y-5 sm:space-y-6" aria-labelledby="use-cases-heading">
+        <div class="text-center space-y-1.5 sm:space-y-2">
+          <h2 id="use-cases-heading" class="text-xl xs:text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Everyday Conversion Use Cases
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Transform any photo into a ready-to-share PDF document.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+          <div class="p-4.5 sm:p-5 bg-white rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2 shadow-2xs">
+            <div class="text-red-600 font-bold text-xs sm:text-sm">🪪 ID Cards & Passports</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Combine front and back photos of driver's licenses, IDs, and visas securely without uploading to cloud servers.
+            </p>
+          </div>
+          <div class="p-4.5 sm:p-5 bg-white rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2 shadow-2xs">
+            <div class="text-red-600 font-bold text-xs sm:text-sm">🧾 Receipts & Invoices</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Merge expense receipts and paper invoices into a single neat PDF for tax filing and company reimbursements.
+            </p>
+          </div>
+          <div class="p-4.5 sm:p-5 bg-white rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2 shadow-2xs">
+            <div class="text-red-600 font-bold text-xs sm:text-sm">📚 Notes & Assignments</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Turn photos of handwritten lecture notes, textbook pages, and homework into organized multi-page study PDFs.
+            </p>
+          </div>
+          <div class="p-4.5 sm:p-5 bg-white rounded-xl border border-slate-200 space-y-1.5 sm:space-y-2 shadow-2xs">
+            <div class="text-red-600 font-bold text-xs sm:text-sm">🎨 Design Portfolios</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Compile artwork, photography portfolios, and marketing graphics into high-fidelity PDF presentations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-10 space-y-5 sm:space-y-6" aria-labelledby="faq-heading">
+        <div class="space-y-1.5 sm:space-y-2">
+          <h2 id="faq-heading" class="text-xl xs:text-2xl font-bold text-slate-900 tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Everything you need to know about our local Image to PDF tool.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 pt-1 sm:pt-2">
+          <article class="space-y-1.5">
+            <h3 class="font-semibold text-slate-900 text-xs sm:text-sm">Is it truly safe for sensitive documents like IDs and passports?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Yes, 100%. All processing runs locally inside your browser's JavaScript engine. Your photos and documents never leave your computer or phone. You can even disconnect your internet after loading the page and the conversion will continue to work completely offline.
+            </p>
+          </article>
+
+          <article class="space-y-1.5">
+            <h3 class="font-semibold text-slate-900 text-xs sm:text-sm">What image formats can I convert to PDF?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Our tool supports JPG, JPEG, PNG, WebP, SVG, AVIF, BMP, and GIF formats. Vector and unsupported formats are automatically rasterized at full natural resolution via HTML5 Canvas before embedding.
+            </p>
+          </article>
+
+          <article class="space-y-1.5">
+            <h3 class="font-semibold text-slate-900 text-xs sm:text-sm">Are there file size or image count limits?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              There are no artificial limits. You can convert dozens of images into a single document as long as your device has sufficient browser RAM.
+            </p>
+          </article>
+
+          <article class="space-y-1.5">
+            <h3 class="font-semibold text-slate-900 text-xs sm:text-sm">Does this tool add watermarks or branding to my PDF?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Never. The generated PDF documents are 100% clean, professional, and contain zero watermarks, headers, footers, or third-party branding.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
